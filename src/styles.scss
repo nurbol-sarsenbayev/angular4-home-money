@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+@import './vars';
+
+html, body {
+    height: 100%;
+    font-family: 'roboto';
+}
+
+.logo {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    .l {
+        position: absolute;
+        border-radius: 50%;
+        background-color: $accentColor;
+    }
+
+    .l2, .l3 {
+        width: 8px;
+        height: 8px;
+    }
+
+    .l1, .l5, .l4 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .l1 {
+        bottom: 0;
+        left: 0;
+    }
+
+    .l2 {
+        left: 10px;
+        top: 5px;
+    }
+
+    .l3 {
+        left: 18px;
+        top: 15px;
+    }
+
+    .l4 {
+        left: 26px;
+        top: 0;
+    }
+
+    .l5 {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.btn {
+    background-color: $accentColor;
+    color: #ffffff;
+    border-radius: 0;
+
+    &:hover {
+        background-color: $accentLightColor;
+        color: #ffffff;
+    }
+}
+
+a {
+    color: $accentColor;
+    &:hover {
+        color: $accentColor;
+    }
+}
+
+.text-xs-center {
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffff;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid rgb(236, 239, 241);
+    box-shadow: none;
+    border-radius: 0;
+
+    &:focus {
+        box-shadow: none;
+        border-color: $accentColor;
+    }
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #ddd;
+    opacity: 1;
+    font-style: italic;
+}
+
+.form-control::-moz-placeholder {
+	color: #ddd;
+    opacity: 1;
+    font-style: italic;
+}
+
+.form-control:-ms-input-placeholder {
+	color: #ddd;
+    opacity: 1;
+    font-style: italic;
+}
+
+.checkbox {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
