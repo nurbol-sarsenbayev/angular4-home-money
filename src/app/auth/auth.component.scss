@@ -24,9 +24,24 @@
 
     &-container {
         margin: auto;
+        width: 450px;
     }
 
     &-content {
         padding: 30px 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .auth {
+        display: block;
+
+        &-container {
+            width: 100%;
+        }
+
+        &-content {
+            padding: 30px 25px;
+        }
     }
 }

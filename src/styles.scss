@@ -6,6 +6,7 @@ html, body {
     min-height: 100%;
     min-width: 320px;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
     color: #4f5f6f;
 }
 
@@ -88,12 +89,19 @@ a {
     margin-bottom: 10px;
 }
 
+.form-group {
+    .form-help-text { font-size: 13px; }
+
+    &.has-error .form-help-text { color: #fb494d; }
+    &.has-success .form-help-text { color: #8cde33; }    
+}
+
 .form-control {
     &.underlined {
         padding-left: 0;
         padding-right: 0;
         border: none;
-        border-bottom: 1px solid #d7dde4;
+        border-bottom: 2px solid #d7dde4;
         box-shadow: none;
         border-radius: 0;
     
@@ -101,15 +109,13 @@ a {
             box-shadow: none;
             border-color: $accentColor;
         }
-    
-        &.ng-touched.ng-invalid {
-            border-color: red;
-            color: red;
+
+        .has-error & {
+            border-color: #fb494d;
         }
-    
-        &.ng-touched.ng-valid {
-            background-color: rgb(250, 255, 189);  
-            border-color: green;
+
+        .has-success & {
+            border-color: #4bcf99;
         }    
     }
 }
