@@ -1,1 +1,144 @@
 /* You can add global styles to this file, and also import other style files */
+@import './sass/vars';
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    min-width: 320px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #4f5f6f;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+    vertical-align: middle;
+
+    .l {
+        position: absolute;
+        border-radius: 50%;
+        width: 11px;
+        height: 11px;
+        background-color: $accentColor;
+    }
+
+    .l2, .l3 {
+        width: 7px;
+        height: 7px;
+    }
+
+    .l1 {
+        bottom: 0;
+        left: 0;
+    }
+
+    .l2 {
+        left: 10px;
+        bottom: 13px;
+    }
+
+    .l3 {
+        left: 17px;
+        bottom: 4px;
+    }
+
+    .l4 {
+        left: 25px;
+        bottom: 13px;
+    }
+
+    .l5 {
+        bottom: 0;
+        left: 34px;
+    }
+}
+
+.btn {
+    background-color: $accentColor;
+    color: #ffffff;
+    border-radius: 0;
+
+    &:hover, &:focus {
+        background-color: $accentDarkColor;
+        color: #ffffff;
+    }
+
+    &[disabled]:hover {
+        background-color: $accentColor;
+    }
+}
+
+a {
+    color: $accentColor;
+    &:hover {
+        color: $accentDarkColor;        
+        text-decoration: none;
+    }
+}
+
+.text-xs-center {
+    text-align: center;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    margin-bottom: 10px;
+}
+
+.form-group {
+    .form-help-text { font-size: 13px; }
+
+    &.has-error .form-help-text { color: #fb494d; }
+    &.has-success .form-help-text { color: #8cde33; }    
+}
+
+.form-control {
+    &.underlined {
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+        border-bottom: 2px solid #d7dde4;
+        box-shadow: none;
+        border-radius: 0;
+    
+        &:focus {
+            box-shadow: none;
+            border-color: $accentColor;
+        }
+
+        .has-error & {
+            border-color: #fb494d;
+        }
+
+        .has-success & {
+            border-color: #4bcf99;
+        }    
+    }
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #ddd;
+    opacity: 1;
+    font-style: italic;
+}
+
+.form-control::-moz-placeholder {
+	color: #ddd;
+    opacity: 1;
+    font-style: italic;
+}
+
+.form-control:-ms-input-placeholder {
+	color: #ddd;
+    opacity: 1;
+    font-style: italic;
+}
+
+.checkbox {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
