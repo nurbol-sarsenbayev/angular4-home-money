@@ -1,0 +1,41 @@
+@import '../../sass/vars';
+
+.main-wrapper {
+    background-color: #f0f3f6;
+}
+
+.header {
+    padding: 20px 50px;
+    background-color: #d7dde4;
+}
+
+.content {
+    padding: 50px 50px;
+    min-height: 100vh;
+
+    &-title {
+        margin: 0;
+        line-height: 1;
+        flex-grow: 1;
+        font-size: 28px;
+    }
+
+    &-header {
+        display: flex;
+        padding-bottom: 20px;
+        border-bottom: 1px inset #d7dde4;
+    }
+
+    &-refresh {
+        padding: 5px 10px;
+        text-align: center;
+        border: 1px solid $accentColor;
+        color: $accentColor;
+        background: none;
+
+        &:hover {
+            color: #fff;
+            background-color: $accentColor;
+        }
+    }
+}
