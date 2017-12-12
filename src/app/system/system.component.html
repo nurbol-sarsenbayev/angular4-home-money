@@ -12,33 +12,35 @@
       </div>
       <span>Бухгалтерия</span>
     </div>
+
+    <nav class="sidebar-menu">
+      <ul>
+        <li routerLinkActive="active"><a routerLink="/system/bill"><i class="fa fa-building-o"></i> Счет</a></li>
+        <li routerLinkActive="active"><a routerLink="/system/history"><i class="fa fa-flash"></i> История</a></li>
+        <li routerLinkActive="active"><a routerLink="/system/planning"><i class="fa fa-archive"></i> Планирование</a></li>
+        <li routerLinkActive="active"><a routerLink="/system/records"><i class="fa fa-plus-square"></i> Запись</a></li>
+      </ul>
+    </nav>
   </aside>
 
   <header class="header">
     <div class="header-title">
-      12:12:12
+      {{ currentDate | date: 'dd.MM.yyyy' }}
+    </div>
+    <div class="header-profile">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Действие <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Действие</a></li>
+          <li><a href="#">Другое действие</a></li>
+          <li><a href="#">Что-то иное</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Отдельная ссылка</a></li>
+        </ul>
     </div>
   </header>
 
   <article class="content">
-    <div class="content-header">
-      <h1 class="content-title">Страница счета</h1>
-      <button class="content-refresh"><i class="fa fa-refresh"></i></button>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="card">
-          <h4 class="card-title">Счет</h4>
-          
-        </div>
-      </div>
-      <div class="col-sm-7">
-        <div class="card">
-          <h4 class="card-title">Курс</h4>
-        </div>
-      </div>
-    </div>  
+     <router-outlet></router-outlet>
   </article>
 
 </div>

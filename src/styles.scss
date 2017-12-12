@@ -78,6 +78,9 @@ a {
         color: $accentDarkColor;        
         text-decoration: none;
     }
+    &:visited, &:active, &:link {
+        text-decoration: none;        
+    }
 }
 
 .text-xs-center {
