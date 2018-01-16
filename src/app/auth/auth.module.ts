@@ -16,6 +16,10 @@ import { SharedModule } from '../shared/shared.module';
     AuthRoutingModule,
     SharedModule
   ],
-  declarations: [AuthComponent, LoginComponent, RegistrationComponent]
+  declarations: [
+    AuthComponent, 
+    LoginComponent, 
+    RegistrationComponent
+  ]
 })
 export class AuthModule { }
