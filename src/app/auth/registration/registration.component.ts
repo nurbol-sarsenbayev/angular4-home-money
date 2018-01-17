@@ -46,10 +46,10 @@ export class RegistrationComponent implements OnInit {
    }
 
   confirmPassword(control: FormControl) {
-   if(this.password && control.value !== this.password.value) {
-     return { notEquivalent: true };
-   }
-   return null;
+    if(this.password && control.value !== this.password.value) {
+      return { notEquivalent: true };
+    }
+    return null;
   }
 
   existEmail(control: FormControl) {
