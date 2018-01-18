@@ -1,3 +1,17 @@
-<p>
-  records-page works!
-</p>
+<div class="content-header">
+    <h1 class="content-title">Страница записей</h1>
+    <button class="content-refresh" (click)="refresh()"><i class="fa fa-refresh"></i></button>
+</div>
+
+<div class="content-body" [ngClass]="{ loading: !isLoaded }">
+    <div class="row" *ngIf="isLoaded">
+        <div class="col-sm-6">
+          <hm-add-event></hm-add-event>
+        </div>
+    
+        <div class="col-sm-6">
+          <hm-add-category></hm-add-category>
+        </div>
+    </div> 
+</div>
+

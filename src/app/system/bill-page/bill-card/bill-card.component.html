@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Счет</h3>
+    </div>
+    <div class="card-content">
+        <ul class="list">
+            <li><i class="fa fa-rub"></i> {{bill.value | number:'1.2':'en-US'}}</li>
+            <li><i class="fa fa-usd"></i> {{dollar | number:'1.2':'en-US'}}</li>
+            <li><i class="fa fa-eur"></i> {{euro | number:'1.2':'en-US'}}</li>
+        </ul>
+    </div>
+</div>

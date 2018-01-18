@@ -11,6 +11,14 @@ html, body {
     color: #4f5f6f;
 }
 
+.loading {
+    &:before {
+        content: 'Loading...';
+        display: block;
+        text-align: center;
+    }
+}
+
 .logo {
     position: relative;
     display: inline-block;
@@ -91,6 +99,34 @@ a {
     background-color: #fff;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
     margin-bottom: 10px;
+
+    &-header {
+        border-bottom: 1px inset #d7dde4;
+        padding: 15px 20px;
+    }
+
+    &-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    &-content {
+        padding: 15px 20px;
+    }
+}
+
+.table {
+    border: 0;
+
+    tr {
+        border-bottom: 1px solid #eceeef;
+    }
+
+    thead tr {
+        border-bottom-width: 2px;
+        font-weight: bold;
+    }
 }
 
 .form-group {

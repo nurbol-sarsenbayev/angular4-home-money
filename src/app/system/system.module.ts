@@ -7,10 +7,19 @@ import { BillPageComponent } from './bill-page/bill-page.component';
 import { HistoryPageComponent } from './history-page/history-page.component';
 import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
+import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
+import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
+import { BillService } from '../shared/services/bill.service';
+import { SharedModule } from '../shared/shared.module';
+import { AddEventComponent } from './records-page/add-event/add-event.component';
+import { AddCategoryComponent } from './records-page/add-category/add-category.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
+    FormsModule,
     SystemRoutingModule
   ],
   declarations: [
@@ -18,7 +27,14 @@ import { RecordsPageComponent } from './records-page/records-page.component';
     BillPageComponent,
     HistoryPageComponent,
     PlanningPageComponent,
-    RecordsPageComponent
+    RecordsPageComponent,
+    BillCardComponent,
+    CurrencyCardComponent,
+    AddEventComponent,
+    AddCategoryComponent
+  ],
+  providers: [
+    BillService
   ]
 })
 export class SystemModule { }

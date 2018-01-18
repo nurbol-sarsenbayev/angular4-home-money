@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+      <h3 class="card-title">Курс</h3>
+  </div>
+  <div class="card-content">
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th>Валюта</th>
+                  <th>Курс</th>
+                  <th>Дата</th>
+              </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>RUB</td>
+                    <td>1</td>
+                    <td>{{this.currency.date | hmMoment:'YYYY-MM-DD' }}</td>
+                </tr>
+                <tr *ngFor="let c of currencies">
+                    <td>{{c}}</td>
+                    <td>{{this.currency.rates[c]}}</td>
+                    <td>{{this.currency.date | hmMoment:'YYYY-MM-DD' }}</td>
+                </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

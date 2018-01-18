@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
+import { MomentPipe } from './pipes/moment.pipe';
 
 @NgModule({
   imports: [
@@ -8,8 +9,10 @@ import { HttpModule } from '@angular/http';
     HttpModule
   ],
   declarations: [
+    MomentPipe
   ],
   exports: [
+    MomentPipe
   ]
 })
 export class SharedModule { }

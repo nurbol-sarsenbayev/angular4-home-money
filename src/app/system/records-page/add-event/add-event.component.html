@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Добавить событие</h3>
+    </div>
+    <div class="card-content">
+      <form #form="ngForm" (ngSubmit)="submit(form)">
+        <div class="form-group">
+          <label for="">Выберите категорию</label>
+          <select class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Выберите тип</label>
+          <div class="radio">
+            <label for="income">
+                <input type="radio" name="type" id="income" checked>
+                <span>Доход</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label for="expense">
+                <input type="radio" name="type" id="expense">
+                <span>Расход</span>
+            </label>
+          </div>                
+        </div>
+
+        <div class="form-group">
+          <label for="">Введите сумму</label>
+          <input type="number" class="form-control">
+        </div>
+
+        <button class="btn" type="submit">Добавить</button>
+      </form>
+    </div>
+  </div>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecordsPageComponent implements OnInit {
 
+  isLoaded = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  refresh() {
+
   }
 
 }
