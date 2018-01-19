@@ -40,7 +40,8 @@ export class EditCategoryComponent implements OnInit, OnDestroy {
 
       if(name.length > 0 && capacity > 0) {
         this.sub = this.categoryService.updateCategory(new Category(name, capacity, +this.currentCategoryId))
-          .subscribe((category: Category) => {            
+          .subscribe((category: Category) => {  
+            console.log('Категория была редактирована');          
             this.categoryUpdated.emit(category);
             this.setDefaultCategory();
             form.control.markAsUntouched();

@@ -27,6 +27,7 @@ export class AddCategoryComponent implements OnInit, OnDestroy {
       if(name.length > 0 && capacity > 0) {
         this.sub = this.categoryService.addCategory(new Category(name, capacity))
           .subscribe((category: Category) => {
+            console.log('Категория была добавлена');    
             form.reset();
             this.categoryAdded.emit(category);
           });
