@@ -103,6 +103,14 @@ a {
     &-header {
         border-bottom: 1px inset #d7dde4;
         padding: 15px 20px;
+        display: flex;
+
+        &-info {
+            flex-grow: 1;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: right;
+        }
     }
 
     &-title {
