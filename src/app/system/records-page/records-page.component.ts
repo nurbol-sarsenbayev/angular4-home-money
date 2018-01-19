@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../shared/services/category.service';
+import { Category } from '../shared/models/category.model';
 
 @Component({
   selector: 'hm-records-page',
@@ -7,15 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecordsPageComponent implements OnInit {
 
-  isLoaded = true;
+  isLoaded = false;
+  categories: Category[] = [];
 
-  constructor() { }
+  constructor(
+    private categoryService: CategoryService
+  ) { }
 
   ngOnInit() {
+    this.refresh();
   }
 
-  refresh() {
+  onCategoryAdded(category: Category) {
+    this.categories.push(category);
+  }
 
+  onCategoryUpdated(category: Category) {
+    let index = this.categories.findIndex(c => c.id === category.id);
+    this.categories[index] = category;
+  }  
+
+  refresh() {
+    this.isLoaded = false;
+    this.categoryService.getCategories()
+      .subscribe(categories => {
+        this.categories = categories;
+        this.isLoaded = true;
+      });
   }
 
 }

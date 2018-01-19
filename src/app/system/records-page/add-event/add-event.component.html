@@ -4,37 +4,45 @@
     </div>
     <div class="card-content">
       <form #form="ngForm" (ngSubmit)="submit(form)">
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'has-error': category.invalid && category.touched, 'has-success': category.valid && category.touched}">
           <label for="">Выберите категорию</label>
-          <select class="form-control">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+          <select class="form-control" name="category" #category="ngModel" ngModel required pattern="^[1-9]{1}[0-9]*">
+            <option value="0"></option>
+            <option [value]="c.id" *ngFor="let c of categories">{{c.name}}</option>
           </select>
+          <span class="form-help-text" *ngIf="category.invalid && category.touched">
+            Выберите категорию
+          </span>
         </div>
 
         <div class="form-group">
           <label for="">Выберите тип</label>
-          <div class="radio">
-            <label for="income">
-                <input type="radio" name="type" id="income" checked>
-                <span>Доход</span>
+          <div class="radio" *ngFor="let t of types; let id = index">
+            <label [for]="t.type">
+                <input type="radio" ngModel="income" name="type" [id]="t.type" [value]="t.type">
+                <span>{{t.label}}</span>
             </label>
           </div>
-          <div class="radio">
-            <label for="expense">
-                <input type="radio" name="type" id="expense">
-                <span>Расход</span>
-            </label>
-          </div>                
         </div>
 
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'has-error': amount.invalid && amount.touched, 'has-success': amount.valid && amount.touched}">
           <label for="">Введите сумму</label>
-          <input type="number" class="form-control">
+          <input type="number" class="form-control" name="amount" ngModel #amount="ngModel" required min="0" pattern="^[0-9]*">
+          <span class="form-help-text" *ngIf="amount.invalid && amount.touched">
+            <ng-template [ngIf]="amount.errors['required']">Заполните это поле</ng-template>
+            <ng-template [ngIf]="amount.errors['pattern']">Число не может быть меньше нуля</ng-template>
+          </span>
         </div>
 
-        <button class="btn" type="submit">Добавить</button>
+        <div class="form-group" [ngClass]="{'has-error': description.invalid && description.touched, 'has-success': description.valid && description.touched}">
+          <label for="">Введите описание</label>
+          <textarea class="form-control" name="description" ngModel #description="ngModel" required></textarea>
+          <span class="form-help-text" *ngIf="description.invalid && description.touched">
+            <ng-template [ngIf]="description.errors['required']">Заполните это поле</ng-template>
+          </span>
+        </div>
+
+        <button class="btn" type="submit" [disabled]="form.invalid">Добавить</button>
       </form>
     </div>
   </div>

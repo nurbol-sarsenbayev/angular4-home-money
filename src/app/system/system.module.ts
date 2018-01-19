@@ -9,15 +9,17 @@ import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
 import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
 import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
-import { BillService } from '../shared/services/bill.service';
+import { BillService } from './shared/services/bill.service';
 import { SharedModule } from '../shared/shared.module';
 import { AddEventComponent } from './records-page/add-event/add-event.component';
 import { AddCategoryComponent } from './records-page/add-category/add-category.component';
 import { FormsModule } from '@angular/forms';
+import { CategoryService } from './shared/services/category.service';
+import { EditCategoryComponent } from './records-page/edit-category/edit-category.component';
+import { EventService } from './shared/services/event.service';
 
 @NgModule({
   imports: [
-    CommonModule,
     SharedModule,
     FormsModule,
     SystemRoutingModule
@@ -31,10 +33,13 @@ import { FormsModule } from '@angular/forms';
     BillCardComponent,
     CurrencyCardComponent,
     AddEventComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   providers: [
-    BillService
+    BillService,
+    CategoryService,
+    EventService
   ]
 })
 export class SystemModule { }

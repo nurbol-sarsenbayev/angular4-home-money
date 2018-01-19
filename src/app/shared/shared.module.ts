@@ -12,6 +12,7 @@ import { MomentPipe } from './pipes/moment.pipe';
     MomentPipe
   ],
   exports: [
+    CommonModule,
     MomentPipe
   ]
 })

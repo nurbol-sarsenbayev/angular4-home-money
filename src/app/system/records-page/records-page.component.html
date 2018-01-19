@@ -6,12 +6,13 @@
 <div class="content-body" [ngClass]="{ loading: !isLoaded }">
     <div class="row" *ngIf="isLoaded">
         <div class="col-sm-6">
-          <hm-add-event></hm-add-event>
+          <hm-add-event [categories]="categories"></hm-add-event>
         </div>
     
         <div class="col-sm-6">
-          <hm-add-category></hm-add-category>
+          <hm-add-category (categoryAdded)="onCategoryAdded($event)"></hm-add-category>
+          <hm-edit-category [categories]="categories" (categoryUpdated)="onCategoryUpdated($event)"></hm-edit-category>
         </div>
     </div> 
-</div>
+</div> 
 

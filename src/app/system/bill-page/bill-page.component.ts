@@ -4,8 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { BillService } from '../../shared/services/bill.service';
-import { Bill } from '../../shared/models/bill.model';
+import { BillService } from '../shared/services/bill.service';
+import { Bill } from '../shared/models/bill.model';
 
 @Component({
   selector: 'hm-bill-page',
