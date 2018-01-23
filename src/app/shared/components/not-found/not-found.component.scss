@@ -1,0 +1,29 @@
+@import "../../../../sass/_vars";
+
+.wrapper {
+    background-color: #667380;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 500px;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    color: $default_text_color;
+}
+
+h2 {
+    margin: 0;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+p {
+    font-weight: bold;
+    font-size: 22px;
+}

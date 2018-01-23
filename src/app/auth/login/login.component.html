@@ -10,11 +10,6 @@
     <input type="password" class="form-control underlined" ngModel name="password" placeholder="Введите ваш пароль" required #password="ngModel">
   </div>
 
-  <div class="alert alert-danger" *ngIf="isAuthFailed">
-    <button type="button" class="close" (click)="isAuthFailed = false">&times;</button>
-    Email или пароль неверны
-  </div>
-
   <div class="form-group">
     <button type="submit" class="btn btn-block" [disabled]="form.invalid">Войти</button>
   </div>

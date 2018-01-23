@@ -3,7 +3,8 @@
   <button class="content-refresh" (click)="refresh()"><i class="fa fa-refresh"></i></button>
 </div>
 
-<div class="content-body" [ngClass]="{ loading: !isLoaded }">
+<div class="content-body">
+  <hm-loader *ngIf="!isLoaded"></hm-loader>
   <ng-template [ngIf]="isLoaded">
     <div class="card">
       <div class="card-header">

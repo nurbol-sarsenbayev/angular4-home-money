@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { AuthGuard } from './shared/services/auth.guard';
+
 import { UsersService } from './shared/services/users.service';
-import { SystemModule } from './system/system.module';
+import { AuthService } from './shared/services/auth.service';
+import { MessageService } from './shared/services/message.service';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,13 @@ import { SystemModule } from './system/system.module';
   imports: [
     BrowserModule,
     AuthModule,
-    SystemModule,
     AppRoutingModule,
+    SharedModule
   ],
   providers: [
-    UsersService
+    UsersService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

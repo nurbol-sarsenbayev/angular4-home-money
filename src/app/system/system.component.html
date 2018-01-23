@@ -28,14 +28,14 @@
       {{ currentDate | date: 'dd.MM.yyyy' }}
     </div>
     <div class="header-profile">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Действие <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Действие</a></li>
-          <li><a href="#">Другое действие</a></li>
-          <li><a href="#">Что-то иное</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Отдельная ссылка</a></li>
-        </ul>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Здравствуйте, {{currentUser.name}} <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Действие</a></li>
+              <li class="divider"></li>
+              <li><a (click)="logout()">Выход</a></li>
+            </ul>
+        </div>
     </div>
   </header>
 

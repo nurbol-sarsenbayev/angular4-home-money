@@ -14,7 +14,11 @@ export class EventService extends BaseService {
 
   addEvent(event: HmEvent): Observable<HmEvent> {
     return this.post('events', event);
-  }  
+  }
+  
+  getEvents(): Observable<HmEvent[]> {
+    return this.get('events');
+  }
 
   getTotalOutcomeByCategoryId(): Observable<{[id: string]: number}> {
     return this.get('events?type=outcome')

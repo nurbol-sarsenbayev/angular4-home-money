@@ -78,7 +78,22 @@
     }
 
     &-profile {
-        position: relative;
+        a {
+            color: $default_text_color;
+            font-weight: bold;
+            &:hover {
+                color: $accentColor;
+            }
+        }
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            margin-top: -15px;
+            left: auto;
+            right: 0;
+        }
     }
 }
 

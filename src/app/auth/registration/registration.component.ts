@@ -1,7 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsersService } from '../../shared/services/users.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'hm-registration',
@@ -17,7 +18,16 @@ export class RegistrationComponent implements OnInit {
   name: FormControl;
   agree: FormControl;
 
-  constructor(private service: UsersService, private router: Router) { }
+  constructor(
+    private service: UsersService, 
+    private router: Router,
+    private title: Title,
+    private meta: Meta
+  ) { 
+    title.setTitle("Страница регистрации");
+    meta.updateTag({ name: "keywords", content: "регистрация" });
+    meta.updateTag({ name: "description", content: "Страница регистрации в систему Домашнюю бухгалтерию" });
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -65,7 +75,7 @@ export class RegistrationComponent implements OnInit {
       this.service.addUser(newUser)
         .subscribe(user => {
           if(user) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/login'], { queryParams: { canLogin: true } });
           }
         });
     }

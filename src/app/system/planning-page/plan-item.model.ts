@@ -6,7 +6,8 @@ export class PlanItem {
     ) {}
 
     getPercent() {
-        return this.outcome * 100 / this.categoryCapacity;
+        const p = this.outcome * 100 / this.categoryCapacity;
+        return p > 100 ? 100 : p;
     }
 
     getRemain() {
