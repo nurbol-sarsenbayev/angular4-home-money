@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.route.queryParams
       .subscribe(params => {
         if(params['canLogin']) {
