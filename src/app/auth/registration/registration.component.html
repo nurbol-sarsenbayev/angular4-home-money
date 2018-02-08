@@ -6,9 +6,9 @@
     <label for="email">Email</label>
     <input type="text" class="form-control underlined" placeholder="Введите email" [formControl]="email">
     <span *ngIf="email.invalid && email.touched" class="form-help-text">
-      <span *ngIf="email.errors['required']">Email не может быть пустым</span>
-      <span *ngIf="!email.errors['required'] && email.errors['email']">Введите email корректно</span>
-      <span *ngIf="email.errors['emailExist']">Такой email уже существует</span>      
+      <ng-container *ngIf="email.errors['required']">Email не может быть пустым</ng-container>
+      <ng-container *ngIf="!email.errors['required'] && email.errors['email']">Введите email корректно</ng-container>
+      <ng-container *ngIf="email.errors['emailExist']">Такой email уже существует</ng-container>      
     </span>
   </div>
 
@@ -16,11 +16,11 @@
     <label for="password">Пароль</label>
     <input type="password" class="form-control underlined" placeholder="Введите пароль" [formControl]="password">
     <span *ngIf="password.invalid && password.touched" class="form-help-text">
-      <span *ngIf="password.errors['required']">Пароль не может быть пустым</span>
-      <span *ngIf="password.errors['minlength']">Пароль должен быть больше {{password.errors['minlength']['requiredLength']}} символов</span>
-      <span *ngIf="!password.errors['required'] && !password.errors['minlength'] && password.errors['notReliable']">
+      <ng-container *ngIf="password.errors['required']">Пароль не может быть пустым</ng-container>
+      <ng-container *ngIf="password.errors['minlength']">Пароль должен быть больше {{password.errors['minlength']['requiredLength']}} символов</ng-container>
+      <ng-container *ngIf="!password.errors['required'] && !password.errors['minlength'] && password.errors['notReliable']">
         Пароль должен содержать латинские буквы (строчные и прописные), цифры, специальные символы (!@#$%^&*)
-      </span>
+      </ng-container>
     </span>
   </div>
 
@@ -28,8 +28,8 @@
     <label for="re-password">Подтверждение пароля</label>
     <input type="password" class="form-control underlined" placeholder="Введите пароль повторно" formControlName="rePassword">
     <span *ngIf="rePassword.invalid && rePassword.touched" class="form-help-text">
-      <span *ngIf="rePassword.errors['required']">Подтверждение не может быть пустым</span>
-      <span *ngIf="!rePassword.errors['required'] && rePassword.errors['notEquivalent']">Подтверждение не совпадает с паролем</span>
+      <ng-container *ngIf="rePassword.errors['required']">Подтверждение не может быть пустым</ng-container>
+      <ng-container *ngIf="!rePassword.errors['required'] && rePassword.errors['notEquivalent']">Подтверждение не совпадает с паролем</ng-container>
     </span>
   </div>
 
